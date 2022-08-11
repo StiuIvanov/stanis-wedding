@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<!--<header th:replace="fragments/commons::nav"></header>-->
+<main>
+        <div class="scene scene--card" >
+            <div class="card">
+                <div class="card__face card__face--front"><img src="/img/front.png" width="100%" height="100%"></div>
+                <div class="card__face card__face--back"><img src="/img/back.png" width="100%" height="100%"></div>
+            </div>
+        </div>
+        <p>Click card to flip.</p>
+</main>
+<footer th:replace="fragments/commons::footer"></footer>
+<script>var cards = document.querySelectorAll('.card');
+
+[...cards].forEach((card)=>{
+    card.addEventListener( 'click', function() {
+        card.classList.toggle('is-flipped');
+    });
+});</script>
+</body>
+</html>
